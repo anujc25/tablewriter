@@ -11,8 +11,6 @@ import (
 	"math"
 	"strings"
 	"unicode"
-
-	"github.com/mattn/go-runewidth"
 )
 
 const (
@@ -35,7 +33,7 @@ func WrapString(s string, lim int) ([]string, int) {
 	var lines []string
 	max := 0
 	for _, v := range words {
-		max = runewidth.StringWidth(v)
+		max = DisplayWidth(v)
 		if max > lim {
 			lim = max
 		}
@@ -87,7 +85,7 @@ func WrapWords(words []string, spc, lim, pen int) [][]string {
 	}
 	lengths := make([]int, n)
 	for i := 0; i < n; i++ {
-		lengths[i] = runewidth.StringWidth(words[i])
+		lengths[i] = DisplayWidth(words[i])
 	}
 	nbrk := make([]int, n)
 	cost := make([]int, n)
