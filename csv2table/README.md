@@ -1,6 +1,8 @@
 ASCII Table Writer Tool
 =========
 
+Note: This repository is fork of github.com/olekukonko/tablewriter repository with some additional changes.
+
 Generate ASCII table on the fly via command line ...  Installation is simple as
 
 #### Get Tool
